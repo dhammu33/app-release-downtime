@@ -1,73 +1,35 @@
-# React + TypeScript + Vite
+# Centralized Release & Downtime Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A professional React application designed to manage and track application releases and maintenance downtimes across multiple services.
 
-Currently, two official plugins are available:
+## 🚀 Overview
+This application serves as a centralized hub for tracking:
+- **Application Releases**: Keep a history of versions and release dates.
+- **Downtime Management**: Log and monitor scheduled or unscheduled service maintenances.
+- **Real-time Data**: Integrated with AWS S3 for direct file-based storage.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 Features
+- **Summary Dashboard**: High-level view of all applications.
+- **Granular Tracking**: Dedicated sections for Releases and Downtime.
+- **AWS S3 Integration**: Uses S3 as a JSON "Database" for easy setup and low cost.
+- **TypeScript & Vite**: Built for performance and reliability.
+- **PrimeReact & PrimeIcons**: Enterprise-grade UI components.
 
-## React Compiler
+## 📖 Documentation
+For detailed information on how to deploy this application to your own AWS environment, please refer to:
+- **[DEPLOYMENT.md](DEPLOYMENT.md)**: Step-by-step guide for AWS S3 hosting and configuration.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 💻 Tech Stack
+- **Frontend**: React 19, Vite, TypeScript
+- **Styling**: PrimeFlex, SASS
+- **Storage**: AWS S3 (via SDK v3)
+- **Icons**: PrimeIcons, Lucide-React
 
-## Expanding the ESLint configuration
+## 📦 Getting Started
+1. Unzip the project.
+2. Run `npm install` to install dependencies.
+3. Follow the instructions in `DEPLOYMENT.md` to set up your `.env` and AWS resources.
+4. Run `npm run dev` for local development or `npm run build` for production.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+*Created for the Centralized Release & Downtime Tracking System.*
