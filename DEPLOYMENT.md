@@ -4,7 +4,16 @@
 
 ---
 
-## 1. Objective of Deployment
+## 1. Getting Started
+Before you begin, ensure you have the project files on your machine.
+1. **Unzip the Project**: Extract the provided `.zip` or `.tar.gz` file to a folder on your computer.
+2. **Open Terminal**: Navigate to the extracted folder in your terminal or command prompt.
+3. **Install Dependencies**: Run the following command to install necessary libraries:
+   ```bash
+   npm install
+   ```
+
+## 2. Objective of Deployment
 This document explains how to:
 - Host the React application on AWS S3.
 - Configure S3 as a static website.
@@ -101,16 +110,22 @@ Create a dedicated IAM user for S3 programmatic access.
 ---
 
 ## 6. Configure Environment Variables
-Before building the application, configure your `.env` file:
+The application needs to know which AWS credentials and bucket to use. You must provide these via a `.env` file **before** building the app.
 
-1. Create a `.env` file in the project root.
-2. Update the following values:
+### How to create the `.env` file:
+1. Look for a file named `.env.example` in the root folder.
+2. **Duplicate/Copy** that file and rename the copy to exactly `.env`.
+3. Open the `.env` file in a text editor (like Notepad, VS Code, or TextEdit).
+4. Replace the placeholder values with your actual AWS credentials:
    ```env
    VITE_AWS_REGION=your-region
-   VITE_S3_DATABASE_BUCKET=your-database-bucket-name
-   VITE_AWS_ACCESS_KEY=your-access-key
-   VITE_AWS_SECRET_KEY=your-secret-key
+   VITE_AWS_BUCKET_NAME=your-database-bucket-name
+   VITE_AWS_ACCESS_KEY_ID=your-access-key-id
+   VITE_AWS_SECRET_ACCESS_KEY=your-secret-access-key
    ```
+
+> [!IMPORTANT]
+> These credentials are baked into the application during the `npm run build` step. If you change them later, you must rebuild and re-upload the files to S3.
 
 ---
 
