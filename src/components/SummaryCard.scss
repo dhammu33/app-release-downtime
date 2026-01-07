@@ -1,0 +1,126 @@
+// SummaryCard SCSS - Light Theme Compatible
+.summary-card {
+    background-color: var(--bg-card);
+    /* White */
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-light);
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Right Edge Color Accent */
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 4px;
+        height: 100%;
+    }
+
+    /* Variant: Primary (Indigo) */
+    &.primary {
+        .card-icon-container {
+            background-color: var(--primary-light);
+            /* #e0e7ff */
+            color: var(--primary);
+            /* #4f46e5 */
+        }
+
+        &::after {
+            background-color: var(--primary);
+        }
+    }
+
+    /* Variant: Warning (Amber) */
+    &.warning {
+        .card-icon-container {
+            background-color: #fffbeb;
+            /* Amber-50 */
+            color: #f59e0b;
+            /* Amber-500 */
+        }
+
+        &::after {
+            background-color: #f59e0b;
+        }
+    }
+
+    /* Variant: Success (Emerald) */
+    &.success {
+        .card-icon-container {
+            background-color: #ecfdf5;
+            /* Emerald-50 */
+            color: #10b981;
+            /* Emerald-500 */
+        }
+
+        &::after {
+            background-color: #10b981;
+        }
+    }
+}
+
+.card-icon-container {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+
+    @media (min-width: 768px) {
+        width: 56px;
+        height: 56px;
+        border-radius: 12px;
+        font-size: 1.5rem;
+    }
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    flex: 1;
+
+    @media (min-width: 768px) {
+        gap: 0.25rem;
+    }
+}
+
+.card-title {
+    margin: 0;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    @media (min-width: 768px) {
+        font-size: 0.875rem;
+    }
+}
+
+.card-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-main);
+    /* Slate-900 */
+    line-height: 1;
+
+    @media (min-width: 768px) {
+        font-size: 2rem;
+    }
+}

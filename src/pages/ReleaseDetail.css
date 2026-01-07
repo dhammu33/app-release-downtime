@@ -1,0 +1,33 @@
+.release-detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.release-detail-container .p-card {
+  border-radius: 12px;
+}
+.release-detail-container .p-card .p-card-title {
+  margin-bottom: 0;
+}
+.release-detail-container .p-card .p-card-content {
+  padding-top: 0;
+  padding-bottom: 0.5rem;
+}
+.release-detail-container .p-panel {
+  background: var(--surface-card);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.release-detail-container .p-panel .p-panel-header {
+  background: rgba(255, 255, 255, 0.03);
+  border: none;
+  padding: 1.25rem 1.5rem;
+}
+.release-detail-container .p-panel .p-panel-header .p-panel-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.release-detail-container .p-panel .p-panel-content {
+  background: transparent;
+  border: none;
+  padding: 1.5rem;
+}/*# sourceMappingURL=ReleaseDetail.css.map */

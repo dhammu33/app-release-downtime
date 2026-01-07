@@ -1,0 +1,40 @@
+.release-detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .p-card {
+        border-radius: 12px;
+
+        .p-card-title {
+            margin-bottom: 0;
+        }
+
+        .p-card-content {
+            padding-top: 0;
+            padding-bottom: 0.5rem;
+        }
+    }
+
+    .p-panel {
+        background: var(--surface-card);
+        border-radius: 12px;
+        overflow: hidden;
+
+        .p-panel-header {
+            background: rgba(255, 255, 255, 0.03);
+            border: none;
+            padding: 1.25rem 1.5rem;
+
+            .p-panel-title {
+                font-weight: 600;
+                font-size: 1.1rem;
+            }
+        }
+
+        .p-panel-content {
+            background: transparent;
+            border: none;
+            padding: 1.5rem;
+        }
+    }
+}

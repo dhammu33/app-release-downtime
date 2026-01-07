@@ -1,0 +1,275 @@
+/* Dark Navy Sidebar with Purple Accents */
+.app-sidebar {
+  background-color: var(--sidebar-bg);
+  /* #0f172a */
+  height: 100vh !important;
+  display: flex;
+  flex-direction: column;
+  color: var(--sidebar-text);
+  border-right: none;
+
+  .sidebar-brand {
+    display: flex;
+    align-items: center;
+    padding: 11.7px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    .brand-logo {
+      color: #fff;
+      background: var(--primary);
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-weight: 800;
+      margin-right: 12px;
+      font-size: 14px;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.p-panelmenu {
+  width: 100%;
+  padding: 0.5rem;
+
+  /* Global Panel Menu Reset */
+  .p-panelmenu-header-action,
+  .p-panelmenu-content,
+  .p-menuitem-link,
+  .p-menuitem-content,
+  .p-panelmenu-header-content,
+  .p-menuitem,
+  .p-panelmenu-panel {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    /* Remove focus outline which might show white */
+  }
+
+  /* Top Level Headers (Dashboard, Admin) */
+  .p-panelmenu-header-action {
+    display: flex !important;
+    align-items: center;
+    color: #94a3b8 !important;
+    padding: 0.75rem 1rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    border-radius: 8px;
+    margin-bottom: 0.25rem;
+
+    &:hover {
+      color: #fff !important;
+      background-color: rgba(255, 255, 255, 0.05) !important;
+    }
+
+    .p-menuitem-icon {
+      color: #94a3b8 !important;
+      margin-right: 12px;
+      order: 1;
+    }
+
+    .p-menuitem-text {
+      order: 2;
+    }
+
+    /* Move arrow/chevron to the right */
+    .p-submenu-icon,
+    .p-panelmenu-icon {
+      color: #94a3b8 !important;
+      margin-left: auto !important;
+      order: 3;
+      font-size: 0.75rem !important;
+    }
+  }
+
+  /* Submenu Container - Vertical Guide Line */
+  .p-panelmenu-content {
+    padding: 0rem 0 0.5rem 0 !important;
+    position: relative;
+    /* This margin aligns the line vertically with the center of the cog icon */
+    margin-left: 1.7rem !important;
+    background: transparent !important;
+
+    .p-menuitem {
+      margin: 0.25rem 0 !important;
+    }
+  }
+
+  /* Submenu Links (Manage Application, etc.) */
+  .p-menuitem-link {
+    padding: 0.6rem 1rem !important;
+    /* Space items from the line */
+    color: #8993a3 !important;
+    border-radius: 8px;
+    transition: all 0.2s;
+    background: transparent !important;
+
+    &:hover {
+      color: #fff !important;
+      background-color: rgba(255, 255, 255, 0.05) !important;
+    }
+
+    .p-menuitem-icon {
+      font-size: 0.9rem;
+      margin-right: 12px;
+      color: inherit !important;
+    }
+
+    .p-menuitem-text {
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: #8993a3 !important;
+    }
+  }
+}
+
+/* Sub-submenu items (if any) or deeply nested items */
+.p-panelmenu .p-panelmenu-content .p-menuitem-content {
+  background: transparent !important;
+  color: #8993a3 !important;
+}
+
+.p-panelmenu {
+  .p-panelmenu-panel {
+    .p-panelmenu-header {
+      .p-panelmenu-header-content {
+        background: transparent !important;
+        border: none;
+
+        a {
+          color: #94a3b8 !important;
+          font-weight: 400;
+        }
+
+        .p-panelmenu-header-link {
+          padding: 1rem;
+
+          .p-submenu-icon {
+            order: 3;
+            margin-left: auto;
+            width: 12px;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+/* Active State for Top Level Items (Dashboard) */
+
+
+.p-panelmenu {
+  .p-panelmenu-panel {
+    &.active-menuitem {
+      .p-panelmenu-header {
+        .p-panelmenu-header-content {
+          background: #4f46e5 !important;
+          color: #fff !important;
+          border-radius: 8px;
+          border: none !important;
+
+          a {
+            color: #fff !important;
+          }
+
+
+          .p-menuitem-icon {
+            color: #fff !important;
+
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Active State for Submenu Items (Manage App etc) */
+.p-panelmenu .p-panelmenu-content .p-menuitem.active-menuitem>.p-menuitem-content .p-menuitem-link,
+.p-panelmenu .p-panelmenu-content .p-menuitem.active-menuitem>.p-menuitem-link {
+  background: #4f46e5 !important;
+  color: #fff !important;
+  border-radius: 8px;
+
+  .p-menuitem-text {
+    color: #fff !important;
+    font-weight: 600;
+  }
+
+  .p-menuitem-icon {
+    color: #fff !important;
+  }
+}
+
+/* Expanded Admin Section Styling */
+/* When Admin is expanded (p-highlight) but NOT active itself, force it to be muted/transparent */
+.p-panelmenu .p-panelmenu-panel>.p-panelmenu-header.p-highlight:not(.active-menuitem)>.p-panelmenu-header-action {
+  background: transparent !important;
+  color: #94a3b8 !important;
+
+  .p-menuitem-icon {
+    color: #94a3b8 !important;
+  }
+
+  .p-submenu-icon {
+    color: #94a3b8 !important;
+  }
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    color: #fff !important;
+
+    .p-menuitem-icon {
+      color: #fff !important;
+    }
+  }
+}
+
+/* Mobile Sidebar (PrimeSidebar) Customization */
+.p-sidebar {
+  background-color: var(--sidebar-bg) !important;
+  color: var(--sidebar-text) !important;
+  border: none !important;
+  padding: 0 !important;
+
+  .p-sidebar-header {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: transparent !important;
+
+    .p-sidebar-close {
+      color: #fff !important;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+      }
+    }
+  }
+
+  .p-sidebar-content {
+    padding: 1rem 0 !important;
+    background-color: transparent !important;
+  }
+
+  .sidebar-brand {
+    color: #fff;
+
+    .brand-logo {
+      background: var(--primary);
+      color: #fff;
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-weight: 800;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

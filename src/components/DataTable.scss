@@ -1,0 +1,238 @@
+/* DataTable SCSS - Light Theme Compatible */
+.p-datatable {
+
+  /* Header (Search Bar Area) */
+  .p-datatable-header {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-bottom: none;
+    padding: 1rem;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+
+    @media (min-width: 768px) {
+      padding: 1.5rem;
+    }
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      margin: 0;
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    .p-input-icon-left {
+      width: 100%;
+      max-width: 320px;
+      position: relative;
+      /* Ensure text is positioned relative to this */
+
+      i {
+        color: var(--text-muted);
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-top: 0;
+        /* Reset default margins */
+      }
+
+      input {
+        width: 100%;
+        background-color: #fff;
+        border: 1px solid var(--border-light);
+        padding: 0.5rem 1rem 0.5rem 3rem;
+        /* Increased left padding for icon */
+        border-radius: 8px;
+        color: var(--text-main);
+
+        &:focus {
+          border-color: var(--primary);
+          box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+      }
+    }
+
+    .white-space-nowrap {
+      padding: 0.5rem 1rem;
+
+      .p-button-label {
+        font-weight: 500;
+      }
+    }
+
+    .p-inputtext-sm {
+      .p-inputtext {
+        padding: 0.5rem 0.65625rem;
+      }
+    }
+  }
+
+  /* Horizontal Scroll Wrapper */
+  .p-datatable-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Table Head */
+  .p-datatable-thead>tr>th {
+    background-color: #f8fafc;
+    /* Slate-50 */
+    color: var(--text-secondary);
+    /* Slate-600 */
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 1px solid var(--border-light);
+    border-width: 0 0 1px 0;
+    padding: 1rem;
+
+    &:first-child {
+      border-left: 1px solid var(--border-light);
+    }
+
+    &:last-child {
+      border-right: 1px solid var(--border-light);
+    }
+  }
+
+  /* Table Body */
+  .p-datatable-tbody>tr {
+    background-color: var(--bg-card);
+    color: var(--text-main);
+    transition: background-color 0.15s;
+
+    >td {
+      padding: 0.5rem 1rem;
+      /* Reduced padding for cleaner look */
+      border: 1px solid var(--border-light);
+      border-width: 0 0 1px 0;
+      vertical-align: middle;
+
+      &:first-child {
+        border-left: 1px solid var(--border-light);
+      }
+
+      &:last-child {
+        border-right: 1px solid var(--border-light);
+      }
+    }
+
+    &:hover {
+      background-color: #f8fafc !important;
+      /* Hover Slate-50 */
+    }
+
+    &.p-datatable-emptymessage {
+      td {
+        text-align: center;
+        border-bottom: 1px solid var(--border-light);
+
+        /* If no paginator, add border radius to bottom corners */
+        &:first-child {
+          border-bottom-left-radius: 12px;
+        }
+
+        &:last-child {
+          border-bottom-right-radius: 12px;
+        }
+      }
+
+      &:hover {
+        background-color: var(--bg-card) !important;
+      }
+    }
+  }
+
+  /* Paginator */
+  .p-paginator {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-top: none;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    padding: 0.75rem;
+
+    .p-paginator-current {
+      color: var(--text-muted);
+    }
+
+    .p-paginator-pages .p-paginator-page,
+    .p-paginator-first,
+    .p-paginator-prev,
+    .p-paginator-next,
+    .p-paginator-last {
+      min-width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 6px;
+      color: var(--text-secondary);
+
+      &:hover {
+        background-color: var(--bg-main);
+      }
+
+      &.p-highlight {
+        background-color: var(--primary-light);
+        color: var(--primary);
+      }
+    }
+  }
+}
+
+/* Custom Action Buttons */
+.action-btn {
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  /* Using explicit px if var not found, assum var(--radius-sm) is valid */
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-btn {
+  background-color: var(--primary-light);
+  color: var(--primary);
+
+  &:hover {
+    background-color: var(--primary);
+    color: white;
+  }
+}
+
+.delete-btn {
+  background-color: #fee2e2;
+  color: #ef4444;
+
+  &:hover {
+    background-color: #ef4444;
+    color: white;
+  }
+}
+
+.view-btn {
+  background: #c3edf5;
+  color: #024955;
+  text-decoration: none;
+}
+
+/* Badge helper to prevent wrapping */
+.status-badge {
+  white-space: nowrap !important;
+  display: inline-block;
+}
